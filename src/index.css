@@ -1,0 +1,147 @@
+a,h1,h2,h3,h4,h5,a,p,div {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+
+.hn-header {
+  background-color: #ff6600;
+}
+
+.hn-header-logo {
+  color: white;
+  display: flex;
+}
+
+.hn-header-title {
+  font-weight: bold;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: large;
+  padding: 0px 0px 0px 10px;
+}
+
+.y-logo {
+  border: 2px solid white;
+  margin: 10px 10px 10px 2px;
+  padding: 4px;
+}
+
+.hn-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hn-header-container-entry-right {
+  margin: 0 10px 0 auto;
+}
+
+.hn-header-container-entry-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hn-header-nav-list {
+  display: flex;
+  justify-items: flex-start;
+}
+
+.hn-header-nav-menu {
+  padding: 0px 0px 0px 10px;
+  color: black;
+}
+
+.hn-header-nav-list a {
+  color: black;
+  font-size: 13px;
+}
+
+.hn-entry-row-1 {
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+}
+
+.hn-entry-row-2 {
+  margin-left: 50px;
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+  font-size:8pt;
+  color: #828282;
+}
+
+.hn-entry-row-1 div {
+  margin: 5px 10px 0px 5px;
+}
+
+.hn-entry-row-2 div, a {
+  margin: 5px 10px 0px 5px;
+}
+
+.hn-site-container {
+  background-color: #f6f6ef;
+  width: 85%;
+  margin: auto;
+}
+
+.hn-entry-title {
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid black;
+}
+
+.hn-entry-container {
+  font-size: 11px;
+}
+
+.hn-entry-row-1 a {
+  color: grey;
+  font-size: 8pt;
+}
+
+body {
+  counter-reset: submission;
+}
+
+.entry-counter::before {
+  counter-increment: submission;
+  content: counter(submission) ".";
+}
+
+.comment-head {
+  font-size: 8pt;
+  color: #828282;
+}
+
+.comment-head span {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.comment-text {
+  color: black;
+  font-size: 9pt;
+}
+
+.logo-link {
+
+}
