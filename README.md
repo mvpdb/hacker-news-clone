@@ -13,7 +13,7 @@ We are going to see how quick a multi featured site such as **Hacker News** can 
 6. **Post moderation** - *Via Mvp DB Dashboard*
 7. **Submission Ranking** - *Using a custom* [gravity function](https://medium.com/hacking-and-gonzo/how-hacker-news-ranking-algorithm-works-1d9b0cf2c08d)
 
-We will start with setting up our data tables in Mvp DB, using the  [Mvp DB Dashbboard](https://dashboard.mvpdb.io).  In Mvp DB every row automatically has five special columns called [system columns](/tables#system-columns) - one being `created_by`, which is the logged in user that created the row. Since these column values are *only writeable by Mvp DB*, we know that the user present in `created_by` is the true creator of the row.
+We will start with setting up our data tables in Mvp DB, using the  [Mvp DB Dashbboard](https://dashboard.mvpdb.io).  In Mvp DB every row automatically has five special columns called [system columns](https://docs.mvpdb.io/tables#system-columns) - one being `created_by`, which is the logged in user that created the row. Since these column values are *only writeable by Mvp DB*, we know that the user present in `created_by` is the true creator of the row.
 
 Keeping that fact in mind, our table definitions will be *Submissions*, *Upvotes*, and *Comments*:
 
@@ -59,7 +59,7 @@ We will start by [defining our APIs in the Mvp DB dashboard](https://dashboard.m
 
 3) We create a third API on the Upvote table. We set this API to **only allow users to READ their own upvotes** - so other users can't see an exhaustive list of things other users have upvoted.
 
-We will additionally apply a CREATE [Pre-Request Filter](/pre-request-filters) so that one user cannot upvote the same submission multiple times.
+We will additionally apply a CREATE [Pre-Request Filter](https://docs.mvpdb.io/pre-request-filters) so that one user cannot upvote the same submission multiple times.
 
 |  **Table** | *Upvotes* |
 |---------------|-----------------|
@@ -101,7 +101,7 @@ https://<company-subdomain>.mvpdb.io
 
 ### Javascript SDK
 
-The [MvpDB javascript SDK](/sdk) is used to authenticate with MvpDB. We will use the helper functions it provides to access our tables in Mvp DB.
+The [MvpDB javascript SDK](https://docs.mvpdb.io/sdk) is used to authenticate with MvpDB. We will use the helper functions it provides to access our tables in Mvp DB.
 
 Instantiating the sdk in javascript we have:
 
@@ -148,7 +148,7 @@ For our frontend to know whether or not to display an upvote, we rely on our `Up
 
 ### Upvote Scoring
 
-Hacker News uses a scoring mechanism to rank submissions and comments. Logged in users can upvote items which feeds into a [ranking algorithm](http://www.righto.com/2013/11/how-hacker-news-ranking-really-works.html).  Higher ranked submissions bubble to the top to be show on the front page.  To handle this feature, we will define an [Api Action](/api-actions), which we trigger after every new upvote to update the total upvotes for the submission, as well as its [score](https://medium.com/hacking-and-gonzo/how-hacker-news-ranking-algorithm-works-1d9b0cf2c08d).
+Hacker News uses a scoring mechanism to rank submissions and comments. Logged in users can upvote items which feeds into a [ranking algorithm](http://www.righto.com/2013/11/how-hacker-news-ranking-really-works.html).  Higher ranked submissions bubble to the top to be show on the front page.  To handle this feature, we will define an [Api Action](https://docs.mvpdb.io/api-actions), which we trigger after every new upvote to update the total upvotes for the submission, as well as its [score](https://medium.com/hacking-and-gonzo/how-hacker-news-ranking-algorithm-works-1d9b0cf2c08d).
 
 On our upvote `CREATE` api, we add the following Api Action:
 
